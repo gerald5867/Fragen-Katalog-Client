@@ -70,7 +70,7 @@
         
         
         function OnLoad() {
-						g_quizProcess = false;
+			g_quizProcess = false;
             document.getElementById("restart").style.display = "none";
             document.getElementById("questionPrevNextDiv").style.display = "none";
             document.getElementById("questionDiv").style.display = "none";
@@ -97,7 +97,7 @@
                             backButton.onclick = OnLoad;
                             
                             g_currentKatalog = fileResponse;            
-														PrepareSplittedKatalog();
+							PrepareSplittedKatalog();
 														
                             var startKatalogButton = document.createElement("button");
                             startKatalogButton.className = "pruefungButton";
@@ -194,6 +194,7 @@
         }
         
 		function PrepareSplittedKatalog() {
+			g_currentSplittedKatalog = [];
 			var splitted = g_currentKatalog.split(/\r?\n/);
 			splitted = shuffle(splitted)
 			for(var i = 0; i < splitted.length; ++i) {
@@ -206,7 +207,7 @@
 		}
         
         function OnClickStartKatalogButton() {
-						g_quizProcess = true;
+			g_quizProcess = true;
             document.getElementById("subTitle").innerHTML = g_currentTitle;
             document.getElementById("restart").style.display = "none";
             document.getElementById("displayedAnswers").innerHTML = "";
