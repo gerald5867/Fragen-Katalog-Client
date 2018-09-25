@@ -1,0 +1,374 @@
+<html lang="de">
+	<head>
+	<meta charset="utf-8"/>
+	</head>
+    <title>
+    </title>
+    <body>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <div id="headerDiv">
+            <h1 id="headerTitle" style="margin-top:-20px;">Quiz</h1>
+        </div>
+        <button id="backButton">Zurück zum Hauptmenü</button>
+        <button id="restart" onclick="OnClickStartKatalogButton()" style="display:none;">Neustart</button>
+        <h1 id="subTitle">Herzlich Wilkommen! Wähle deine Prüfung.</h1>
+        <div id="pruefungContainer">
+        </div>
+        <div id="questionDiv">
+            <h2 id="questionDivNumber" class="QuestionNumber"></h2>
+            <h1 id="questionName" class="QuestionName"></h1>
+            <div id="questionTexts" ></div>
+            <div id="displayedAnswers"></div>
+						<div id="questionPrevNextDiv">
+							<button id="prevButton" onclick="OnClickLastQuestion()">Überspringen</button>
+							<button id="nextButton" onclick="OnClickNextQuestion()">Weiter</button>
+						</div>
+        </div>
+    <script>
+        var g_currentQuestion = -1;
+        var g_lastQuestion = -1;
+        var g_currentSplittedKatalog = [];
+        var g_currentCheckboxes = [];
+        var g_pickedAnswers = [];
+        var g_currentTitle = "";
+        var g_differentKatalogeTitle = [];
+        var g_currentKatalog = "";
+        var g_quizProcess = false;
+				document.addEventListener('keydown', function(event) {
+					console.log(g_quizProcess);
+					if(g_quizProcess) {
+						if(event.keyCode >= 49 && event.keyCode <= 57) {
+							try{
+								document.getElementById("checkbox"+(event.keyCode - 49)).checked = true;
+							}
+							catch(err){
+								return;
+							}
+						}
+						else if(event.keyCode == 87) {
+							OnClickNextQuestion();
+						}
+						else if(event.keyCode == 85) {
+							OnClickLastQuestion();
+						}
+					}
+				});
+        
+        function GetFile(_filename, _receiveCallback) {
+            var httpRequest = new XMLHttpRequest();
+            var gotAnswer = false;
+            httpRequest.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200 && !gotAnswer) {
+                    gotAnswer = true;
+                    _receiveCallback(httpRequest.responseText, _filename);
+                }
+            }
+            httpRequest.open("GET", _filename, true);
+            httpRequest.send();
+        }
+        
+        
+        function OnLoad() {
+						g_quizProcess = false;
+            document.getElementById("restart").style.display = "none";
+            document.getElementById("questionPrevNextDiv").style.display = "none";
+            document.getElementById("questionDiv").style.display = "none";
+            document.getElementById("pruefungContainer").innerHTML = "";
+            document.getElementById("headerTitle").innerHTML = "Quiz";
+            document.getElementById("subTitle").innerHTML = "Herzlich Wilkommen! Wähle deine Prüfung.";
+            document.getElementById("backButton").style.display = "none";
+            GetFile("pruefungsindex.txt", function(res, _filename) {
+                var splittedRes = res.split(/\r?\n/);
+                for(var i = 0; i < splittedRes.length; ++i) {
+                    g_differentKatalogeTitle.push(splittedRes[i]);
+                    var buttonNode = document.createElement("button");
+                    buttonNode.innerHTML = splittedRes[i];
+                    buttonNode.className = "pruefungButton";
+                    buttonNode.id = splittedRes[i];
+                    buttonNode.onclick = function(){
+                        GetFile(this.id+".txt", function(fileResponse, _filename) {
+                            document.getElementById("headerTitle").innerHTML = _filename.replace(".txt", "");
+                            g_currentTitle = "Herzlich Willkommen bei "+_filename.replace(".txt", "");
+                            document.getElementById("subTitle").innerHTML = "Herzlich Willkommen bei "+_filename.replace(".txt", "");
+                            document.getElementById("pruefungContainer").innerHTML = "";
+                            var backButton = document.getElementById("backButton");
+                            backButton.style.display = "inline";
+                            backButton.onclick = OnLoad;
+                            
+                            g_currentKatalog = fileResponse;            
+														PrepareSplittedKatalog();
+														
+                            var startKatalogButton = document.createElement("button");
+                            startKatalogButton.className = "pruefungButton";
+                            startKatalogButton.innerHTML = "Quiz starten";
+                            startKatalogButton.onclick = OnClickStartKatalogButton;
+                            
+                            var lookAtKatalogButton  = document.createElement("button");
+                            lookAtKatalogButton.className = "pruefungButton";
+                            lookAtKatalogButton.innerHTML = "Fragenkatalog ansehen"
+                            lookAtKatalogButton.onclick = function(){OnClickLookAtKatalogButton(false);};
+                            
+                            document.getElementById("pruefungContainer").appendChild(startKatalogButton);
+                            document.getElementById("pruefungContainer").appendChild(lookAtKatalogButton);
+                        })
+                    };
+                    document.getElementById("pruefungContainer").appendChild(buttonNode);
+                }
+            });
+        }
+        OnLoad();
+        
+        
+        function AnyAnswerChecked() {
+            for(var i = 0; i < g_currentCheckboxes.length; ++i) {
+                if(document.getElementById("checkbox"+g_currentCheckboxes[i]).checked) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        
+        function OnClickNextQuestion() {
+            if(!AnyAnswerChecked()) {
+                alert("Keine Antwort ausgewählt!");
+                return;
+            }
+            pickedAnswers = [];
+            for(var i = 0; i < g_currentCheckboxes.length; ++i) {
+                if(document.getElementById("checkbox"+g_currentCheckboxes[i]).checked) {
+                    pickedAnswers.push(g_currentCheckboxes[i]);
+                }
+            }
+            g_pickedAnswers.push(pickedAnswers);
+            if(g_currentQuestion - 1 === g_lastQuestion) {
+                OnFinishedQuiz();
+                return;
+            }
+            CreateNextQuestion();
+        }
+        
+        
+        function OnFinishedQuiz() {
+						g_quizProcess = false;
+            document.getElementById("subTitle").innerHTML = "Das Ergebnis "+GetCorrectAnswerCount() + " von "+g_lastQuestion +" richtig beantwortet!"
+            document.getElementById("questionDivNumber").innerHTML = "";
+            document.getElementById("questionName").innerHTML = "";
+            document.getElementById("questionTexts").innerHTML = "";
+            document.getElementById("questionPrevNextDiv").style.display = "none";
+            OnClickLookAtKatalogButton(true);
+            g_pickedAnswers = [];
+            g_currentCheckboxes = [];
+            document.getElementById("restart").style.display = "inline-block";
+        }
+        
+        
+        function GetCorrectAnswerCount() {
+            var res = 0;
+            for(var i = 0; i < g_currentSplittedKatalog.length; ++i) {
+                var parsedQuestion = ParseQuestionLine(g_currentSplittedKatalog[i]);
+                var correctAnswers = parsedQuestion["correctAnswers"];
+                var possibleAnswers = parsedQuestion["possibleAnswers"];
+                var pickedCorrect = true;
+                for(var j = 0; j < g_pickedAnswers[i].length; ++j) {
+                    if(correctAnswers.indexOf(possibleAnswers[g_pickedAnswers[i][j]]) === -1) {
+                        pickedCorrect = false;
+                    }
+                }
+                if(pickedCorrect && g_pickedAnswers[i].length != 0 && g_pickedAnswers[i].length === correctAnswers.length) {
+                    ++res;
+                }
+            }
+            return res;
+        }
+        
+        
+        function OnClickLastQuestion() {
+            g_pickedAnswers.push([]);
+            if(g_currentQuestion - 1 === g_lastQuestion) {
+                OnFinishedQuiz();
+                return;
+            }
+            CreateNextQuestion();
+        }
+        
+				function PrepareSplittedKatalog() {
+					var splitted = g_currentKatalog.split(/\r?\n/);
+					splitted = shuffle(splitted)
+					for(var i = 0; i < splitted.length; ++i) {
+						var trimed = splitted[i].trim()
+						if(trimed === "") {
+							continue;
+						}
+						g_currentSplittedKatalog.push(trimed)
+					}
+				}
+        
+        function OnClickStartKatalogButton() {
+						g_quizProcess = true;
+            document.getElementById("subTitle").innerHTML = g_currentTitle;
+            document.getElementById("restart").style.display = "none";
+            document.getElementById("displayedAnswers").innerHTML = "";
+            g_pickedAnswers = [];
+            g_currentCheckboxes = [];
+            document.getElementById("pruefungContainer").innerHTML = "";
+            document.getElementById("questionPrevNextDiv").style.display = "inline-block";
+            g_currentQuestion = 1;
+            g_lastQuestion = g_currentSplittedKatalog.length;
+             
+            CreateNextQuestion();
+            document.getElementById("questionDiv").style.display = "inline";
+        }
+        
+        
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+        
+        
+        function CreateNextQuestion() {
+            var questionNumber = document.getElementById("questionDivNumber");
+            questionNumber.innerHTML = "Frage "+g_currentQuestion+"/"+g_lastQuestion;
+            var parsedQuestion = ParseQuestionLine(g_currentSplittedKatalog[g_currentQuestion - 1]);
+            document.getElementById("questionName").innerHTML = parsedQuestion["question"];
+            var possibleAnswers = parsedQuestion["possibleAnswers"];
+            var questionMainDiv = document.getElementById("questionDiv");
+            var oldTexts = document.getElementsByClassName("possibleAnswerText");
+            document.getElementById("questionTexts").innerHTML = "";
+            g_currentCheckboxes = [];
+            for(var i = 0; i < possibleAnswers.length; ++i) {
+                var text = document.createElement("p");
+                text.className = "possibleAnswerText";
+                text.style.diplay = "inline-block";           
+                text.innerHTML = "<input id='checkbox"+i+"' type='checkbox'/> "+possibleAnswers[i];
+                g_currentCheckboxes.push(i);
+                document.getElementById("questionTexts").appendChild(text);
+            }
+            ++g_currentQuestion;
+        }
+        
+        
+        function OnClickLookAtKatalogButton(bMarkFalseAnswers) {
+            document.getElementById("displayedAnswers").innerHTML = "";
+            document.getElementById("questionPrevNextDiv").style.display = "none";
+            document.getElementById("questionDivNumber").innerHTML = "";
+            document.getElementById("questionName").innerHTML = "";
+            document.getElementById("questionTexts").innerHTML = "";
+            document.getElementById("pruefungContainer").innerHTML = "";
+            if(!bMarkFalseAnswers) {
+                document.getElementById("subTitle").innerHTML = "";
+            }
+            document.getElementById("questionDiv").style.display = "inline";
+            var lines = g_currentSplittedKatalog;
+            for(var i = 0; i < lines.length; ++i) {
+                var parsedLine = ParseQuestionLine(lines[i]);
+                var questionDiv = document.getElementById("questionDiv");
+                questionDiv.className = "questionDiv";
+                var questionTitle = document.createElement("h2");
+                questionTitle.innerHTML = (i+1)+".) "+parsedLine["question"];
+                 document.getElementById("displayedAnswers").appendChild(questionTitle);
+                var possibleAnswers = parsedLine["possibleAnswers"];
+                var foundCorrectAnswer = false;
+                var questionWasWrong = false;
+                for(var j = 0; j < possibleAnswers.length; ++j) {
+                    var answer = document.createElement("p");
+                    answer.className = "possibleAnswerListedTextNode";
+                    answer.innerHTML = (j+1)+".) "+possibleAnswers[j];
+                    if(parsedLine["correctAnswers"].indexOf(possibleAnswers[j]) !== -1) {
+                        foundCorrectAnswer = true;
+                        answer.style.fontWeight = "bold";
+                        answer.style.color = "green";
+                    }
+                    else if(bMarkFalseAnswers && GetCheckedAnswers(i).indexOf(possibleAnswers[j]) !== -1) {
+                        console.log(GetCheckedAnswers(i));
+                        answer.style.color = "red";
+                        answer.style.fontWeight = "bold";
+                        questionWasWrong = true;
+                    }
+                    document.getElementById("displayedAnswers").appendChild(answer);
+                }
+                if(!foundCorrectAnswer) {
+                    document.getElementById("headerTitle").innerHTML = "ACHTUNG FÜR FRAGE '" + parsedLine["question"] +"' WURDE KEINE RICHTIGE ANTWORT GEFUNDEN!";
+                    document.getElementById("headerTitle").style.color = "red";
+                 }
+                if(bMarkFalseAnswers) {
+                    var skipped = GetCheckedAnswers(i).length === 0;
+                    if(questionWasWrong || skipped || (!CheckedAllRightAnswers(i))) {
+                        questionTitle.style.color = "red";
+                        var text__ = (skipped) ? "(ÜBERSPRUNGEN)" : "(FALSCH)";
+                        if(!skipped) {
+                            var mineAre = GetCheckedAnswers(i);
+                            text__ += " Deine Antwort war : "
+                            for(var xx = 0; xx < mineAre.length; ++xx) {
+                                text__ += mineAre[xx] + ", ";
+                            }
+                            text__[text__.length - 2] = " ";
+                        }
+                        questionTitle.innerHTML = questionTitle.innerHTML + text__
+                    }
+                    else {
+                        questionTitle.innerHTML = questionTitle.innerHTML + " (RICHTIG)";
+                        questionTitle.style.color = "green";                  
+                    }
+                }
+            }
+        }
+        
+        
+        function CheckedAllRightAnswers(answerNumber) {
+            var parsedLine = ParseQuestionLine(g_currentSplittedKatalog[answerNumber]);
+            var correctAnswers = parsedLine["correctAnswers"];
+            var possibleAnswers = parsedLine["possibleAnswers"];
+            var checkedAnswers = GetCheckedAnswers(answerNumber);
+            if(correctAnswers.length != checkedAnswers.length) {
+                return false;
+            }
+            for(var i = 0; i < checkedAnswers.length; ++i) {
+                console.log(checkedAnswers[i]);
+                console.log(checkedAnswers);
+                if(correctAnswers.indexOf(checkedAnswers[i]) === -1) {
+                    return false;
+                }
+            }
+            return true;
+        }
+            
+            
+        function GetCheckedAnswers(answerNumber) {
+            var answers = [];
+            var parsedLine = ParseQuestionLine(g_currentSplittedKatalog[answerNumber]);
+            for(var i = 0; i < g_pickedAnswers[answerNumber].length; ++i) {
+                answers.push(parsedLine["possibleAnswers"][g_pickedAnswers[answerNumber][i]]);
+            }
+            return answers;
+        }
+        
+        
+        function ParseQuestionLine(_questionLine) {
+						try {
+							var equalSplit = _questionLine.split('=');
+							var question = equalSplit[0];
+							var possibleAnswers = equalSplit[1].split(',');
+							var correctAnswers = equalSplit[2].split(',');
+							correctAnswers = correctAnswers.map(val => val.trim());
+							possibleAnswers = possibleAnswers.map(val => val.trim());
+							return {"question" : question, "possibleAnswers" : possibleAnswers, "correctAnswers" : correctAnswers};
+						}
+						catch(err) {
+							alert("In der Frage "+_questionLine.split('=')[0]+" ist ein Fehler!");
+							console.log(err)
+						}
+        }
+        
+        
+        
+    </script>
+    </body>
+</html>
