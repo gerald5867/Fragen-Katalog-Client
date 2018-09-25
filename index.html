@@ -39,7 +39,8 @@
 					if(g_quizProcess) {
 						if(event.keyCode >= 49 && event.keyCode <= 57) {
 							try{
-								document.getElementById("checkbox"+(event.keyCode - 49)).checked = true;
+								var checkBox = document.getElementById("checkbox"+(event.keyCode - 49));
+								checkBox.checked = !checkBox.checked;
 							}
 							catch(err){
 								return;
@@ -150,7 +151,7 @@
         
         
         function OnFinishedQuiz() {
-						g_quizProcess = false;
+			g_quizProcess = false;
             document.getElementById("subTitle").innerHTML = "Das Ergebnis "+GetCorrectAnswerCount() + " von "+g_lastQuestion +" richtig beantwortet!"
             document.getElementById("questionDivNumber").innerHTML = "";
             document.getElementById("questionName").innerHTML = "";
@@ -192,17 +193,17 @@
             CreateNextQuestion();
         }
         
-				function PrepareSplittedKatalog() {
-					var splitted = g_currentKatalog.split(/\r?\n/);
-					splitted = shuffle(splitted)
-					for(var i = 0; i < splitted.length; ++i) {
-						var trimed = splitted[i].trim()
-						if(trimed === "") {
-							continue;
-						}
-						g_currentSplittedKatalog.push(trimed)
-					}
+		function PrepareSplittedKatalog() {
+			var splitted = g_currentKatalog.split(/\r?\n/);
+			splitted = shuffle(splitted)
+			for(var i = 0; i < splitted.length; ++i) {
+				var trimed = splitted[i].trim()
+				if(trimed === "") {
+					continue;
 				}
+				g_currentSplittedKatalog.push(trimed)
+			}
+		}
         
         function OnClickStartKatalogButton() {
 						g_quizProcess = true;
@@ -352,19 +353,19 @@
         
         
         function ParseQuestionLine(_questionLine) {
-						try {
-							var equalSplit = _questionLine.split('=');
-							var question = equalSplit[0];
-							var possibleAnswers = equalSplit[1].split(',');
-							var correctAnswers = equalSplit[2].split(',');
-							correctAnswers = correctAnswers.map(val => val.trim());
-							possibleAnswers = possibleAnswers.map(val => val.trim());
-							return {"question" : question, "possibleAnswers" : possibleAnswers, "correctAnswers" : correctAnswers};
-						}
-						catch(err) {
-							alert("In der Frage "+_questionLine.split('=')[0]+" ist ein Fehler!");
-							console.log(err)
-						}
+			try {
+				var equalSplit = _questionLine.split('=');
+				var question = equalSplit[0];
+				var possibleAnswers = equalSplit[1].split(',');
+				var correctAnswers = equalSplit[2].split(',');
+				correctAnswers = correctAnswers.map(val => val.trim());
+				possibleAnswers = possibleAnswers.map(val => val.trim());
+				return {"question" : question, "possibleAnswers" : possibleAnswers, "correctAnswers" : correctAnswers};
+			}
+			catch(err) {
+				alert("In der Frage "+_questionLine.split('=')[0]+" ist ein Fehler!");
+				console.log(err)
+			}
         }
         
         
