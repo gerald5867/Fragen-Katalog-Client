@@ -28,7 +28,7 @@ Die Breite des CI hängt von der Stichprobengröße ab.  = richtig/falsch = rich
 Die Breite eines CI für den Anteilswert von der Grundgesamtheit hängt von der Irrtumswahrscheinlichkeit und vom Stichprobenumfang n ab.  = richtig/falsch = richtig
 Die Breite eines CI für das arithmetische Mittel hängt vom Stichprobenumfang n ab. = richtig/falsch = richtig
 Für die Erstellung des CI muss eine NVT gegeben sein.  = richtig/falsch = richtig
-Das CI wird größer, wenn α-0,05 verringert wird auf α=0,01.  = richtig/falsch = richtig
+Das CI wird größer, wenn α-0,05 verringert wird auf α-0,01. = richtig/falsch = richtig
 Das CI wird nach dem Muster Schätzwert plus/minus dem Produkt aus dem kritischen Verteilungswert und Standartfehler konstruiert.  = richtig/falsch = richtig
 Das CI für μ ist dadurch gekennzeichnet, dass es symmetrisch um den Schätzwert liegt. = richtig/falsch = richtig
 nnerhalb des CI liegt mit einer WSK von 1-α der Wert der Population. = richtig/falsch = richtig
