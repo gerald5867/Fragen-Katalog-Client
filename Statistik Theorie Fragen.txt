@@ -1,13 +1,13 @@
 Welches Skalenniveau muss mind. Vorliegen damit eine Box-Whisker-Grafik sinnvoll angefertigt werden kann? = Ordinal / Nomina / Metrisch = Ordinal
-Welche Aussagen treffen auf Ordinaldaten zu? = Der Median kann bestimmt werden / Die Verhältnisse der Messwerte sind aussagekräftig / Die Zuordnung der (zahlen)-Werte zu den Ausprägungen/Messungen ist völlig willkürlich / Die Ordinalskala drückt Ordnung nach aufsteigender\absteigender Größe aus / Wenn eine Ordinalskala vorliegt, ist die Interpretation von Mittelwert, Varianz und Korrelation aussagekräftig. = Der Median kann bestimmt werden / Die Ordinalskala drückt Ordnung nach aufsteigender/absteigender Größe aus
-Markieren Sie nachfolgend alle Datenniveaus, bei denen die Ermittlung eines Modalwerts grundsätzlich sinnvoll möglich ist. = Metrische / Daten / Intervalldaten / Rationaldaten / Nominaldaten / Ordinaldaten = Metrische / Daten / Intervalldaten / Rationaldaten / Nominaldaten / Ordinaldaten
+Welche Aussagen treffen auf Ordinaldaten zu? = Der Median kann bestimmt werden / Die Verhältnisse der Messwerte sind aussagekräftig / Die Zuordnung der (zahlen)-Werte zu den Ausprägungen/Messungen ist völlig willkürlich / Die Ordinalskala drückt Ordnung nach aufsteigender\absteigender Größe aus / Wenn eine Ordinalskala vorliegt, ist die Interpretation von Mittelwert, Varianz und Korrelation aussagekräftig. = Der Median kann bestimmt werden / Die Ordinalskala drückt Ordnung nach aufsteigender\absteigender Größe aus
+Markieren Sie nachfolgend alle Datenniveaus, bei denen die Ermittlung eines Modalwerts grundsätzlich sinnvoll möglich ist. = Metrischedaten / Intervalldaten / Rationaldaten / Nominaldaten / Ordinaldaten = Metrischedaten / Intervalldaten / Rationaldaten / Nominaldaten / Ordinaldaten
 Welches Skalenniveau muss die AV bei einem doppelten t-Test haben? = nominal / ordinal / metrisch / dichtom = metrisch
 Datenniveaus ankreuzen, bei deren die Ermittlung eines Modalwerts grundsätzlich sinnvoll möglich ist. = Ordinal/Nominal/Metrisch = Ordinal/Nominal/Metrisch
 Markieren Sie nachfolgend alle Datenniveaus bei denen die Ermittlung eines IQA grundsätzlich sinnvoll möglich ist = Rationaldaten / metrische Daten / Ordinaldaten / Nominaldaten / Intervalldaten = Rationaldaten / metrische Daten / Ordinaldaten / Intervalldaten
 Datenniveaus für Varianz: = metrisch/ordinal/nominal = metrisch
 Welche Parameter sind resistent gegen Ausreißer? = IQA/Median/Modalwert/Varianz/Range = IQA/Median/Modalwert
 Welche Parameter sind nicht resistent gegen Ausreißer?  = IQA/Median/Modalwert/Varianz/Range/AM/HAM/GAM/Standartabweichung = Varianz/Range/AM/Standartabweichung
-Welche Parameter sind Maße der zentralen Tendenz? = Mo/Md/AM/HAM/GAM = Mo/Md/AM/
+Welche Parameter sind Maße der zentralen Tendenz? = Mo/Md/AM/HAM/GAM = Mo/Md/AM
 In welches Skalenniveau fällt der IQA? = Ordinal/Metrisch = Ordinal/Metrisch
 Welche der folgenden Maßzahlen sind resistent gegenüber Ausreißern? = Mo und Md / Range und IQA / MD und IQA / AM und Standardabweichung / MD und Range = Mo und Md / MD und IQA
 IQA Abstand, ist dieser sinnvoll? Markieren Sie folgende Datenniveaus = Ordinaldaten / Intervalldaten / Rationaldaten / Nominaldaten / Metrische Daten = Ordinaldaten / Intervalldaten / Rationaldaten / Metrische Daten 
@@ -81,4 +81,4 @@ Die Fehler 1. Und 2. Ordnung ergänzen sich zu 100 %. = richtig/falsch = falsch
 Wie sieht es aus, wenn die WSK für den α-Fehler abnimmt, nimmt dann die WSK für den β-Fehler zu? = richtig/falsch = richtig
 Beim α-Fehler nimmt man H0 an, obwohl in der Population H1 gültig ist. = richtig/falsch = falsch
 Der Fehler 1.Art darf grundsätzlich nur auf 0,01 und 0,05 festgelegt werden. = richtig/falsch = richtig
-Welche Aussagen über α ist\sind richtig? = α darf nur auf 0,05 (5%) und 0,01 (1%) festgelegt werden. / α hängt mit dem β-Fehler zusammen / Es handelt sich um den Fehler 2. Art / Es handelt sich um die WSK, die Nullhypothese zu verwerfen / Es handelt sich um den Fehler 1.Art = α hängt mit dem β-Fehler zusammen
+Welche Aussagen über α ist\sind richtig? = α darf nur auf 0,05 (5%) und 0,01 (1%) festgelegt werden. / α hängt mit dem β-Fehler zusammen / Es handelt sich um den Fehler 2. Art / Es handelt sich um die WSK, die Nullhypothese zu verwerfen / Es handelt sich um den Fehler 1.Art = Es handelt sich um den Fehler 1.Art
