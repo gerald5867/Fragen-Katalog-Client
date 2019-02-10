@@ -33,6 +33,7 @@
         var g_currentTitle = "";
         var g_differentKatalogeTitle = [];
         var g_currentKatalog = "";
+		var g_questionLineDelim = ',';
         var g_quizProcess = false;
 				document.addEventListener('keydown', function(event) {
 					console.log(g_quizProcess);
@@ -81,11 +82,18 @@
             GetFile("pruefungsindex.txt", function(res, _filename) {
                 var splittedRes = res.split(/\r?\n/);
                 for(var i = 0; i < splittedRes.length; ++i) {
-                    g_differentKatalogeTitle.push(splittedRes[i]);
+					var splittedTitle = splittedRes[i].split(',');
+					var title = splittedTitle[0];
+					if(splittedTitle.length >= 2 && splittedTitle.includes("DELIM") !== -1) {
+						var delim = splittedTitle[1].split('=')[1];
+						g_questionLineDelim = delim.trim();
+						console.log("delim ist "+g_questionLineDelim);
+					}
+                    g_differentKatalogeTitle.push(title);
                     var buttonNode = document.createElement("button");
-                    buttonNode.innerHTML = splittedRes[i];
+                    buttonNode.innerHTML = title;
                     buttonNode.className = "pruefungButton";
-                    buttonNode.id = splittedRes[i];
+                    buttonNode.id = title;
                     buttonNode.onclick = function(){
                         GetFile(this.id+".txt", function(fileResponse, _filename) {
                             document.getElementById("headerTitle").innerHTML = _filename.replace(".txt", "");
@@ -357,8 +365,8 @@
 			try {
 				var equalSplit = _questionLine.split('=');
 				var question = equalSplit[0];
-				var possibleAnswers = equalSplit[1].split(',');
-				var correctAnswers = equalSplit[2].split(',');
+				var possibleAnswers = equalSplit[1].split(g_questionLineDelim);
+				var correctAnswers = equalSplit[2].split(g_questionLineDelim);
 				correctAnswers = correctAnswers.map(val => val.trim());
 				possibleAnswers = possibleAnswers.map(val => val.trim());
 				return {"question" : question, "possibleAnswers" : possibleAnswers, "correctAnswers" : correctAnswers};

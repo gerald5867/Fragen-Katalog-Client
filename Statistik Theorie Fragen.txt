@@ -1,0 +1,84 @@
+Welches Skalenniveau muss mind. Vorliegen damit eine Box-Whisker-Grafik sinnvoll angefertigt werden kann? = Ordinal / Nomina / Metrisch = Ordinal
+Welche Aussagen treffen auf Ordinaldaten zu? = Der Median kann bestimmt werden / Die Verhältnisse der Messwerte sind aussagekräftig / Die Zuordnung der (zahlen)-Werte zu den Ausprägungen/Messungen ist völlig willkürlich / Die Ordinalskala drückt Ordnung nach aufsteigender\absteigender Größe aus / Wenn eine Ordinalskala vorliegt, ist die Interpretation von Mittelwert, Varianz und Korrelation aussagekräftig. = Der Median kann bestimmt werden / Die Ordinalskala drückt Ordnung nach aufsteigender/absteigender Größe aus
+Markieren Sie nachfolgend alle Datenniveaus, bei denen die Ermittlung eines Modalwerts grundsätzlich sinnvoll möglich ist. = Metrische / Daten / Intervalldaten / Rationaldaten / Nominaldaten / Ordinaldaten = Metrische / Daten / Intervalldaten / Rationaldaten / Nominaldaten / Ordinaldaten
+Welches Skalenniveau muss die AV bei einem doppelten t-Test haben? = nominal / ordinal / metrisch / dichtom = metrisch
+Datenniveaus ankreuzen, bei deren die Ermittlung eines Modalwerts grundsätzlich sinnvoll möglich ist. = Ordinal/Nominal/Metrisch = Ordinal/Nominal/Metrisch
+Markieren Sie nachfolgend alle Datenniveaus bei denen die Ermittlung eines IQA grundsätzlich sinnvoll möglich ist = Rationaldaten / metrische Daten / Ordinaldaten / Nominaldaten / Intervalldaten = Rationaldaten / metrische Daten / Ordinaldaten / Intervalldaten
+Datenniveaus für Varianz: = metrisch/ordinal/nominal = metrisch
+Welche Parameter sind resistent gegen Ausreißer? = IQA/Median/Modalwert/Varianz/Range = IQA/Median/Modalwert
+Welche Parameter sind nicht resistent gegen Ausreißer?  = IQA/Median/Modalwert/Varianz/Range/AM/HAM/GAM/Standartabweichung = Varianz/Range/AM/Standartabweichung
+Welche Parameter sind Maße der zentralen Tendenz? = Mo/Md/AM/HAM/GAM = Mo/Md/AM/
+In welches Skalenniveau fällt der IQA? = Ordinal/Metrisch = Ordinal/Metrisch
+Welche der folgenden Maßzahlen sind resistent gegenüber Ausreißern? = Mo und Md / Range und IQA / MD und IQA / AM und Standardabweichung / MD und Range = Mo und Md / MD und IQA
+IQA Abstand, ist dieser sinnvoll? Markieren Sie folgende Datenniveaus = Ordinaldaten / Intervalldaten / Rationaldaten / Nominaldaten / Metrische Daten = Ordinaldaten / Intervalldaten / Rationaldaten / Metrische Daten 
+Die Breite des Konfidenzintervalls für den Anteilswert einer Grundgesamtheit hängt von der Irrtumswahrscheinlichkeit und vom Stichprobenumfang n ab. = richtig/falsch = richtig
+Die Wahrscheinlichkeit, dass das Konfidenzintervall einen Bereich angibt, der den wahren Parameterwert der Grundgesamtheit enthält, entspricht 1-Alpha. = richtig/falsch = richtig
+Für die Konstruktion eines Konfidenzintervalls für den Anteilswert einer Grundgesamtheit, müssen die Werte in der Population normalverteilt sein  = richtig/falsch = richtig
+Wie kann man die Breite eines Konfidenzintervalls verkleinern? = alpha erhöhen / alpha vermindern / Daten standardisieren / n vergrößern / n verkleinern = alpha erhöhen / n vergrößern
+Die Breite des Konfidenzintervalls hängt von der Stichprobengröße ab = richtig/falsch = richtig
+Die Breite eines Konfidenzintervalls Grundgesamtheit hängt von der Irrtumswahrscheinlichkeit vom Stichprobenumfang (n) ab. = richtig/falsch = richtig
+Breite des Konfidenzintervalls hängt von der Stichprobe ab. = richtig/falsch = richtig
+Konfidenzintervall werden nach dem Muster: Schätzwert, plus minus Produkt aus kritischem Verteilungswert und Standartfehler konstruiert. = richtig/falsch = richtig
+Die Irrtumswahrscheinlichkeit beeinflusst die Größe des CI?  = richtig/falsch = richtig
+Die Breite des CI für den Anteilswert der Grundgesamtheit hängt von der Irrtumswahrscheinlichkeit vom Stichprobenumfang ab  = richtig/falsch = richtig
+Für die Konstruktion eines CI für den Anteil einer Grundgesamtheit müssen die Werte in der Population normalverteilt sein. = richtig/falsch = richtig
+Konfidenzintervalle werden nach dem Muster Schätzwert, plus/minus Produkt aus kritischem Verteilungswert und Standartfehler konstruiert. = richtig/falsch = richtig
+Die Breite des Konfidenzintervalls hängt von der Irrtumswahrscheinlichkeit vom Stichprobenumfang (n) ab.  = richtig/falsch = richtig
+Die Breite des CI hängt von der Stichprobengröße ab.  = richtig/falsch = richtig
+Die Breite eines CI für den Anteilswert von der Grundgesamtheit hängt von der Irrtumswahrscheinlichkeit und vom Stichprobenumfang n ab.  = richtig/falsch = richtig
+Die Breite eines CI für das arithmetische Mittel hängt vom Stichprobenumfang n ab. = richtig/falsch = richtig
+Für die Erstellung des CI muss eine NVT gegeben sein.  = richtig/falsch = richtig
+Das CI wird größer, wenn α=0,05 verringert wird auf α=0,01.  = richtig/falsch = richtig
+Das CI wird nach dem Muster Schätzwert plus/minus dem Produkt aus dem kritischen Verteilungswert und Standartfehler konstruiert.  = richtig/falsch = richtig
+Das CI für μ ist dadurch gekennzeichnet, dass es symmetrisch um den Schätzwert liegt. = richtig/falsch = richtig
+nnerhalb des CI liegt mit einer WSK von 1-α der Wert der Population. = richtig/falsch = richtig
+Die WSK dass das CI einen Bereich ergibt, der den wahren Parameterwert der Grundgesamtheit enthält,entspricht dem angegebenen 1-α.  = richtig/falsch = richtig
+Das CI für das unbekannte arithmetische Mittel μ in der Grundgesamtheit wird unter sonst gleichen Bedingungen mit zunehmendem Stichprobenumfang kleiner.  = richtig/falsch = richtig
+CI wird kleiner, wenn die Stichprobegrößer ist. = richtig/falsch = richtig
+Wenn statt 0,05 mit 0,01 gerechnet wird, wird das CI kleiner. = richtig/falsch = falsch
+Ein Konfidenzintervall für mü ist dadurch gekennzeichnet, dass es symmetrisch um den Schätzwert liegt. = richtig/falsch = richtig
+Konfidenzintervalle werden nach dem Muster Schätzwert plus\minus dem Produkt aus kritischem Verteilungswertund Standardfehler konstruiert = richtig/falsch = richtig
+Konfidenzintervalle werden nach dem Muster Schätzwert plus\minus Produkt aus kritischen Verteilungswert und Standardfehler konstruiert? = richtig/falsch = richtig
+Das arithmetische Mittel μ der Grundgesamtheit lässt sich umso genauer schätzen, je kleiner der Stichprobenumfang n ist. = richtig/falsch = falsch
+Das μ der Grundgesamtheit lässt sich genauer schätzen je größer s. = richtig/falsch = falsch
+.Müh der Grundgesamtheit lässt sich genauer schätzen je größer s ist = richtig/falsch = falsch
+MC-Fragezum AM: sinnvoll bei  = metrischen Daten/ordinalen Daten/nominalen Daten = metrischen Daten
+Das müh der Grundgesamtheit lässt sich genauer schätzen, je größer s ist.  = richtig/falsch = falsch
+Das AM ist erwartungstreu. = richtig/falsch = richtig
+Das AM ist nicht resistent gegen Ausreißer. = richtig/falsch = richtig
+Das AM der Population ist ein besserer Schätzwert wen s klein ist.= richtig/falsch = richtig
+Das AM der Population ist ein besserer Schätzwert wen die SP groß ist. = richtig/falsch = richtig
+Das arithmetische Mittel mü der Grundgesamtheit lässt sich umso genauer schätzen, je kleiner der Stichprobenumfang n ist. = richtig/falsch = falsch
+Das arithmetische Mittel mü der Grundgesamtheit lässt sich umso genauer schätzen, je größer die Standardabweichung ist. = richtig/falsch = falsch
+Stichprobenkennwerte sind immer erwartungstreue Schätzer für die Grundgesamtheit. = richtig/falsch = falsch
+Stichprobenwerte sind immer Erwartungstreu für die Grundgesamtheit. = richtig/falsch = falsch
+Stichprobenwerte sind immer erwartungstreue Schätzer für die Grundgesamtheit. = richtig/falsch = falsch
+Welche der folgenden Feststellungen treffen auf den Standardfehler des arithmetischen Mittels zu? Haken Sie alle richtigen Aussagen an = Der Standardfehler ist ein wichtiges Konzept im Zusammenhang mit dem Zentralen Grenzwertsatz. / Der Standardfehler ist der Interquartilsbereich des Messfehlers. / Der Standardfehler wächst mit der Stichprobengröße. / Stichprobenkennwerte sind nicht mit einem Standardfehler behaftet. / Der Standardfehler des arithmetischen Mittels ist die Standardabweichung der Verteilung von vielen Stichprobenmittelwerten aus einer Population. = Der Standardfehler ist ein wichtiges Konzept im Zusammenhang mit dem Zentralen Grenzwertsatz. / Der Standardfehler des arithmetischen Mittels ist die Standardabweichung der Verteilung von vielen Stichprobenmittelwerten aus einer Population.
+Beim Aufnahmeverfahren von Versicherungskaufmännern wird ein Test zur Kommunikationskompetenz durchgeführt. Nach dem ersten Monat wird die Anzahl der Vertragsabschlüsse erhoben. Die Korrelation zwischen den Testwerten und der Anzahl der Abschlüsse beträgt0,67.Der Korrelationskoeffizient beweist kausale Zusammenhänge. = Kaufleute mit hoher Kommunikationskompetenz werden wahrscheinlich mehr Vertragsabschlüsse erreichen./ wenn man die Korrelation auf Signifikanz prüft, bestätigt oder verwirft man eine Zusammenhangshypothese/ der Anteil der gemeinsamen Varianz von Testwerten und Vertragsabschlüssen beträgt 67%./ der Anteil der gemeinsamen Varianz von Testwerten und Vertragsabschlüssen beträgt 45%. = Kaufleute mit hoher Kommunikationskompetenz werden wahrscheinlich mehr Vertragsabschlüsse erreichen./ wenn man die Korrelation auf Signifikanz prüft, bestätigt oder verwirft man eine Zusammenhangshypothese/ der Anteil der gemeinsamen Varianz von Testwerten und Vertragsabschlüssen beträgt 45%.
+Korrelation von Selbstbewusstsein und Mathematikleitung von Kindern: r-0,32 = Der Korrelationskoeffizient beweist kausale Zusammenhänge/ Kinder mit hohem Selbstbewusstsein werden wahrscheinlich besser in Mathe sein/ Der Anteil der gemeinsamen Varianz von Testwerten beträgt 1\3./ Der Anteil der gemeinsamen Varianz von Testpunkten beträgt 10 %./ Wenn man die Korrelation auf Signifikanz prüft, bestätigt oder verwirft man die Zusammenhangshypothese. = Kinder mit hohem Selbstbewusstsein werden wahrscheinlich besser in Mathe sein/ Der Anteil der gemeinsamen Varianz von Testpunkten beträgt 10 %./ Wenn man die Korrelation auf Signifikanz prüft, bestätigt oder verwirft man die Zusammenhangshypothese.
+Die Korrelation zwischen Selbstvertrauen und Mathematikleistung liegt bei r-0,32 (200 Schüler) = Der Anteil der gemeinsamen Varianzen der beiden Merkmale liegt bei etwa 10 % / Der Korrelationskoeffizient beweist kausale Zusammenhänge / Kinder mit höherem Selbstbewusstsein erzielen bessere Leistungen / Die Kovarianz ist negativ / Der Anteil gemeinsamer Varianz zwischen beiden Merkmalen ist etwa ein Drittel. = Der Anteil der gemeinsamen Varianzen der beiden Merkmale liegt bei etwa 10 % / Kinder mit höherem Selbstbewusstsein erzielen bessere Leistungen
+Was versteht man unter einer Signifikanzprüfung (bei Zusammenhängen)? = Vergleich zweier unabhängiger Korrelationen / Vergleich zweier abhängiger Korrelationen = Vergleich zweier unabhängiger Korrelationen
+Unter 42 Kindern von Akademikern beträgt die Korrelation zw. Intelligenz und Schulnote r-0,21. Welche der folgenden Aussagen treffen zu? = Die Note wird durch die Intelligenz verursacht? / Der Anteil der gemeinsamen Varianz zwischen den beiden Merkmalen beträgt etwa 4,4 % / Der Anteil der gemeinsamen Varianz zwischen den beiden Merkmalenbeträgt etwa 21 % / Wenn man diese Korrelation auf Signifikanz prüft, bestätigt oder verwirft man eine Zusammenhangshypothese / Der Korrelationskoeffizient beweist stochastische Zusammenhänge = Der Anteil der gemeinsamen Varianz zwischen den beiden Merkmalen beträgt etwa 4,4 % / Wenn man diese Korrelation auf Signifikanz prüft, bestätigt oder verwirft man eine Zusammenhangshypothese / Der Korrelationskoeffizient beweist stochastische Zusammenhänge
+Die Korrelation zwischen Selbstvertrauen und Mathematikleistung liegt bei r-0,32 (bei 200 Schülern) = Der Anteil gem. Varianzen der beiden Merkmale liegt bei etwa 10 %/ Der Korrelationskoeffizient beweist kausale Zusammenhänge/ Kinder mit höherem Selbstvertrauen erzielen bessere Leistungen / Die Kovarianz ist negativ/ Der Anteil gem.  Varianzen zwischen beiden Merkmalen ist etwa 1\3 = Der Anteil gem. Varianzen der beiden Merkmale liegt bei etwa 10 % / Kinder mit höherem Selbstvertrauen erzielen bessere Leistungen 
+Unter 42 Kindern von Akademikern beträgt die Korrelation zwischen Intelligenz und Schulnoten r-0,21.Welche der folgenden Aussagen trifft/treffen auf diese Korrelation zu? = Wenn man diese Korrelation auf Signifikanz prüft, bestätigt oder verwirft man eine Zusammenhangshypothese. / Der Anteil gemeinsamer Varianz zwischen den beiden Merkmalen beträgt etwa 4,4%. / Der Korrelationskoeffizient beschreibt stochastische Zusammenhänge. / Der Anteil gemeinsamer Varianz zwischen den beiden Merkmalen beträgt etwa 21%. / Die Schulnote wird durch die Intelligenz verursacht. = Wenn man diese Korrelation auf Signifikanz prüft, bestätigt oder verwirft man eine Zusammenhangshypothese. / Der Anteil gemeinsamer Varianz zwischen den beiden Merkmalen beträgt etwa 4,4%. / Der Korrelationskoeffizient beschreibt stochastische Zusammenhänge.
+Die Korrelation zwischen Selbstvertrauen und Mathematikleistung in einer Stichprobe von 200 Schüler\innen beträgt r-0,32. Welche der folgenden Aussagen trifft\treffen auf diese Korrelation zu? = Kinder mit höheren Selbstvertrauen erzielen mit höherer Wahrscheinlichkeit bessere Mathematikleistungen. / Der Korrelationskoeffizient beweist kausale Zusammenhänge. / Die Kovarianz ist negativ. / Der Anteil gemeinsamer Varianz zwischen den beiden Merkmalen beträgt etwa 10%. / Der Anteil gemeinsamer Varianz zwischen den beiden Merkmalen macht etwa ein Drittel aus = Kinder mit höheren Selbstvertrauen erzielen mit höherer Wahrscheinlichkeit bessere Mathematikleistungen. / Der Anteil gemeinsamer Varianz zwischen den beiden Merkmalen beträgt etwa 10%.
+SC:Was ist der z-Wert, der die oberen 50% einer Verteilung abschneidet? = 0/0.1/0.5/1 = 0
+SC:z-Wert, der die oberen 97,5% einer Verteilung abschneidet? = -1,96/0.5/-1.35/-0.12 = -1,96
+Z-Werte ablesen: untere 50 % = -0,02/-0,01/0/0,01/0,02 = 0
+Z-Werte ablesen: untere 80 % = 0,84/0,85/0,86 = 0,85
+z-Wert: oberen 97.5 % ? = -1,91/-1,96/-1,97 = -1,96
+z-Wert: oberen 2.5% raussuchen? = 1,91/1,96/1,97 = 1,96
+Welcher Wert einer NVT (z-Wert) unter 84 % =  -1,96/0/0,186/-1/1 = 1
+Welcher Wert einer NVT über 97 %? = -1,88/1,88/-1,77 = -1,88
+Welcher Wert einer Standardnormalverteilung (z-Wert) kommt dem Wert am nächsten, der die unteren ca. 84 Prozent der Gesamtfläche abschneidet? = -1,96/-1/0/1/1.96=1
+Welcher Wert einer Standardnormalverteilung (z-Wert) kommt dem Wert am nächsten, der die unteren 50 Prozent der Gesamtfläche abschneidet? = -1,96/-1/0/1/1.96 = 0
+1.Was macht eine NVT aus? Metrische Daten, n > 30? = richtig/falsch = richtig
+2.Man darf nur bei n < 30 die metrischen Verfahren verwenden. = richtig/falsch = falsch
+Die Wahrscheinlichkeit für den Fehler 1. Art und die Wahrscheinlichkeit für den Fehler 2. Art ergänzen sich auf 1 (100 %) = richtig/falsch = falsch
+Senkt man den Fehler 1.Art steigt der Fehler 2.Art = richtig/falsch = richtig
+Der Fehler 1. Art, ist die WSK, die Nullhypothese zu verwerfen, obwohl diese richtig ist. = richtig/falsch = richtig
+Die Fehler 1. Und 2. Ordnung ergänzen sich zu 100 %. = richtig/falsch = falsch
+Wie sieht es aus, wenn die WSK für den α-Fehler abnimmt, nimmt dann die WSK für den β-Fehler zu? = richtig/falsch = richtig
+Beim α-Fehler nimmt man H0 an, obwohl in der Population H1 gültig ist. = richtig/falsch = falsch
+Der Fehler 1.Art darf grundsätzlich nur auf 0,01 und 0,05 festgelegt werden. = richtig/falsch = richtig
+Welche Aussagen über α ist\sind richtig? = α darf nur auf 0,05 (5%) und 0,01 (1%) festgelegt werden. / α hängt mit dem β-Fehler zusammen / Es handelt sich um den Fehler 2. Art / Es handelt sich um die WSK, die Nullhypothese zu verwerfen / Es handelt sich um den Fehler 1.Art = α hängt mit dem β-Fehler zusammen
