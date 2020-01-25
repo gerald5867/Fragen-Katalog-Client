@@ -87,6 +87,9 @@
 					if(splittedTitle.length >= 2 && splittedTitle.includes("DELIM") !== -1) {
 						var delim = splittedTitle[1].split('=')[1];
 						g_questionLineDelim = delim.trim();
+						if(g_questionLineDelim === '') {
+							g_questionLineDelim = ',';
+						}
 						console.log("delim ist "+g_questionLineDelim);
 					}
                     g_differentKatalogeTitle.push(title);
